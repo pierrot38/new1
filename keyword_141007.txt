@@ -1,0 +1,101 @@
+<SDF 2014 >
+http://img.sbs.co.kr/sdf/2014/images/bg_deep2.jpg
+
+============================================================
+/newsfront_v1/src/main/webapp/WEB-INF/views/reporterSpecial/reporterSpecialList.jsp
+<strong class="mfn_tit">
+
+<em class="icn icp"><i class="ir">µ¿¿µ»ó</i></em>${reqItem.TITLE }
+
+
+============================================================
+
+http://n.sbs.co.kr/ZaK15z+
+
+
+https://bitly.com/ZaK15z+
+
+
+https://epoll.me/embed/ACRbNxQS4b8/-----
+
+
+http://pastnews.sbs.co.kr/quiz.jsp?q=&img=200783196&a1=&a2=&a3=&a=undefined&m=
+
+<ÄûÁî´º½º-ÇÏ´ë¼® ±âÀÚ´Ô>
+http://news.sbs.co.kr/news/endPage.do?news_id=N1002599632
+http://n.sbs.co.kr/1CeTQ0Z
+http://pastnews.sbs.co.kr/quiz.jsp?q=%E2%91%A1%20%EC%86%90%EC%97%B0%EC%9E%AC%20%ED%98%88%EC%95%A1%ED%98%95%EC%9D%80?&img=200779346&a1=A%ED%98%95&a2=O%ED%98%95&a3=AB%ED%98%95&a=3&m=%EC%86%90%EC%97%B0%EC%9E%AC%EB%8A%94%20AB%ED%98%95%EC%9E%85%EB%8B%88%EB%8B%A4.
+
+ÄûÁî´º½º -Å×½ºÆ®
+
+<iframe width="640" height="530" src="http://n.sbs.co.kr/1tumeWr" frameborder="0" allowfullscreen></iframe>
+
+http://pastnews.sbs.co.kr/getNewImage.jsp?id=200783198
+
+============================================================
+
+
+http://newsnet.sbs.co.kr/sbs_stat_naver_ns.jsp
+http://newsnet.sbs.co.kr/article_real_naver_ns.jsp
+
+/article_real_naver_ns.js
+
+http://news.sbs.co.kr/makeHTML/naver/naver_wideview.jsp
+http://pastnews.sbs.co.kr/makeHTML/naver/naver_wideview.jsp
+
+
+============================================================
+<iframe allowfullscreen="" frameborder="0" height="393" src="http://sbsplayer.sbs.co.kr/NeTV/NeTVPlayer.jsp?pmContentId=N1002615589&amp;pmENV=news_sbs" width="640"></iframe><br />
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="393" id="Main"><param name="movie" value="http://sbsplayer.sbs.co.kr/NeTV/NeTVPlayer.swf?rnd=1412664989551" /><param name="quality" value="high" /><param name="bgcolor" value="#000000" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="contentID=N1002614550&env=news_sbs&home=http://news.sbs.co.kr/news/endPage.do?news_id=N1002614550" /><!--[if !IE]>--><object type="application/x-shockwave-flash" data="http://sbsplayer.sbs.co.kr/NeTV/NeTVPlayer.swf?rnd=1412664989551" width="640" height="393"><param name="quality" value="high" /><param name="bgcolor" value="#000000" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="contentID=N1002614550&env=news_sbs&home=http://news.sbs.co.kr/news/endPage.do?news_id=N1002614550" /><!--<![endif]--><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" /></a><!--[if !IE]>--></object><!--<![endif]--></object>
+
+===============================================================================================
+
+
+$("#create").live('click',function(event) {
+	var q = encodeURI($('#q').val());
+	var img = encodeURI($('#img').val());
+	var a1 = encodeURI($('#a1').val());
+	var a2 = encodeURI($('#a2').val());
+	var a3 = encodeURI($('#a3').val());
+	var q = encodeURI($('#q').val());
+	var a = encodeURI($("input[type='radio']:checked").val());
+	var m = encodeURI($("#m").val());
+	var url = "http://pastnews.sbs.co.kr/quiz.jsp?q="+q+"&img="+img+"&a1="+a1+"&a2="+a2+"&a3="+a3+"&a="+a+"&m="+m;
+	get_short_url(url,"sbs8news01","R_d95288bbd2f84d1bb0556ed93f09a87e",setIFrame);
+	
+	return false;
+});
+
+
+function get_short_url(long_url, login, api_key, func)
+{
+	$.getJSON(
+		"http://api.bitly.com/v3/shorten?callback=?", 
+		{ 
+			"format": "json",
+			"apiKey": api_key,
+			"login": login,
+			"longUrl": long_url
+		},
+		function(response)
+		{
+			func(response.data.url);
+		}
+	);
+}
+
+function setIFrame(shorturl){
+	var width = encodeURI($('#width').val());
+	var height = encodeURI($('#height').val());
+
+
+	$('#source').val("<iframe width=\""+width+"\" height=\""+height+"\" src=\""+shorturl+"\" frameborder=\"0\" allowfullscreen></iframe>");
+}
+
+copyToClipboard($('#source').val());
+
+===============================================================================================
+
+
+<a href="javascript:;" onclick="goNewsEndPage('${newsAllList.NEWS_ID}', 'srm=comment')" class="mfn_icon_comment" title="´ñ±Û"><i class="ir">´ñ±Û</i></a>
+
